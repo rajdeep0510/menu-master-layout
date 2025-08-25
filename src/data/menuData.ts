@@ -31,15 +31,15 @@ export const menuData: MenuCategory[] = [
       },
       {
         id: "s3",
-        name: "Pan-Seared Scallops",
-        description: "Diver scallops with cauliflower purée, pancetta crisps, and microgreens",
-        price: 22.00,
+        name: "Roasted Beet Carpaccio",
+        description: "Thinly sliced roasted beets with goat cheese mousse, candied walnuts, and herb oil",
+        price: 19.00,
         isSpecial: true
       },
       {
         id: "s4",
-        name: "Charcuterie Selection",
-        description: "Artisanal cured meats, imported cheeses, house-made preserves, and rustic bread",
+        name: "Artisanal Cheese Board",
+        description: "Selection of imported cheeses, seasonal fruits, house-made preserves, and rustic bread",
         price: 24.00
       }
     ]
@@ -49,42 +49,42 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         id: "m1",
-        name: "Braised Short Rib",
-        description: "48-hour braised beef short rib with roasted bone marrow, seasonal vegetables, and red wine jus",
-        price: 42.00,
+        name: "Stuffed Portobello Wellington",
+        description: "Roasted portobello mushrooms wrapped in puff pastry with spinach, sundried tomatoes, and herb cashew cream",
+        price: 32.00,
         isChefChoice: true,
         isSpecial: true
       },
       {
         id: "m2",
-        name: "Chilean Sea Bass",
-        description: "Miso-glazed sea bass with forbidden black rice, baby bok choy, and ginger-scallion oil",
-        price: 38.00
+        name: "Eggplant Parmigiana",
+        description: "Layers of grilled eggplant with fresh mozzarella, basil, and rich tomato sauce, served with garlic bread",
+        price: 28.00
       },
       {
         id: "m3",
-        name: "Duck Confit",
-        description: "Slow-cooked duck leg with cherry gastrique, fingerling potatoes, and wilted spinach",
-        price: 34.00
+        name: "Butternut Squash Ravioli",
+        description: "House-made pasta filled with roasted butternut squash, served in brown butter sage sauce with toasted hazelnuts",
+        price: 26.00
       },
       {
         id: "m4",
-        name: "Wagyu Ribeye",
-        description: "12oz A5 wagyu ribeye with roasted garlic butter, grilled asparagus, and truffle mashed potatoes",
-        price: 85.00,
+        name: "Grilled Halloumi Steak",
+        description: "Thick-cut halloumi with Mediterranean vegetables, quinoa tabbouleh, and pomegranate molasses",
+        price: 30.00,
         isSpecial: true
       },
       {
         id: "m5",
         name: "Wild Mushroom Risotto",
-        description: "Creamy arborio rice with porcini, shiitake, and chanterelle mushrooms, finished with aged parmesan",
+        description: "Creamy arborio rice with porcini, shiitake, and chanterelle mushrooms, finished with aged parmesan and truffle oil",
         price: 28.00
       },
       {
         id: "m6",
-        name: "Herb-Crusted Lamb",
-        description: "Rack of lamb with rosemary-mint crust, ratatouille, and red wine reduction",
-        price: 44.00
+        name: "Cauliflower Steak",
+        description: "Roasted whole cauliflower with tahini sauce, pomegranate seeds, fresh herbs, and roasted almonds",
+        price: 25.00
       }
     ]
   },
@@ -93,27 +93,27 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         id: "d1",
-        name: "Chocolate Soufflé",
-        description: "Warm dark chocolate soufflé with vanilla bean ice cream and gold leaf",
+        name: "Dark Chocolate Soufflé",
+        description: "Warm vegan dark chocolate soufflé with vanilla bean coconut ice cream and gold leaf",
         price: 14.00,
         isChefChoice: true
       },
       {
         id: "d2",
-        name: "Tiramisu",
-        description: "Classic Italian tiramisu with espresso-soaked ladyfingers and mascarpone",
+        name: "Classic Tiramisu",
+        description: "Traditional Italian tiramisu with espresso-soaked ladyfingers and mascarpone (vegetarian)",
         price: 12.00
       },
       {
         id: "d3",
-        name: "Lemon Tart",
-        description: "Meyer lemon curd tart with torched meringue and fresh berries",
+        name: "Meyer Lemon Tart",
+        description: "Vegan Meyer lemon curd tart with aquafaba meringue and fresh seasonal berries",
         price: 11.00
       },
       {
         id: "d4",
-        name: "Crème Brûlée Trio",
-        description: "Vanilla, lavender, and passion fruit crème brûlée with seasonal fruit",
+        name: "Seasonal Fruit Crème Brûlée",
+        description: "Vanilla, lavender, and passion fruit crème brûlée trio with organic seasonal fruit",
         price: 15.00,
         isSpecial: true
       }
@@ -124,27 +124,27 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         id: "b1",
-        name: "Bella Vista Old Fashioned",
-        description: "House bourbon with maple syrup, orange bitters, and smoked cherry",
+        name: "Garden Botanical Cocktail",
+        description: "House-infused gin with fresh herbs, elderflower, cucumber, and botanical bitters",
         price: 16.00,
         isSpecial: true
       },
       {
         id: "b2",
-        name: "Sommelier's Wine Selection",
-        description: "Curated wine pairings available by the glass or bottle - ask your server",
+        name: "Organic Wine Selection",
+        description: "Curated organic and biodynamic wine pairings available by the glass or bottle - ask your server",
         price: 12.00
       },
       {
         id: "b3",
-        name: "Artisan Coffee",
-        description: "Single-origin espresso drinks made with locally roasted beans",
+        name: "Fair Trade Coffee",
+        description: "Single-origin espresso drinks made with locally roasted, ethically sourced beans",
         price: 5.00
       },
       {
         id: "b4",
-        name: "House-Made Sodas",
-        description: "Refreshing sodas crafted daily with natural ingredients and herbs",
+        name: "Fresh Herb Sodas",
+        description: "House-made sodas with fresh herbs, fruits, and organic botanicals crafted daily",
         price: 6.00
       }
     ]
