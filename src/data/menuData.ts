@@ -5,6 +5,7 @@ export interface MenuItem {
   price: number;
   isSpecial?: boolean;
   isChefChoice?: boolean;
+  image?: string;
 }
 
 export interface MenuCategory {
@@ -18,29 +19,40 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         id: "s1",
-        name: "Truffle Arancini",
-        description: "Crispy risotto balls filled with wild mushrooms, truffle oil, and aged parmesan, served with saffron aioli",
-        price: 18.00,
-        isChefChoice: true
+        name: "Pani Puri",
+        description: "Crispy hollow puris filled with spiced potato, chickpeas, and tangy tamarind water, served with mint chutney",
+        price: 180.00,
+        isChefChoice: true,
+        image: "/images/starters/s1.jpg"
       },
       {
         id: "s2",
-        name: "Burrata Caprese",
-        description: "Fresh burrata cheese with heirloom tomatoes, basil oil, aged balsamic, and toasted pine nuts",
-        price: 16.00
+        name: "Veg Samosa",
+        description: "Flaky pastry filled with spiced potatoes, green peas, and aromatic spices, served with mint chutney",
+        price: 120.00,
+        image: "/images/starters/s2.jpg"
       },
       {
         id: "s3",
-        name: "Roasted Beet Carpaccio",
-        description: "Thinly sliced roasted beets with goat cheese mousse, candied walnuts, and herb oil",
-        price: 19.00,
-        isSpecial: true
+        name: "Paneer Tikka",
+        description: "Fresh cottage cheese marinated in spices and yogurt, grilled until golden and smoky",
+        price: 280.00,
+        image: "/images/starters/s3.jpg"
       },
       {
         id: "s4",
-        name: "Artisanal Cheese Board",
-        description: "Selection of imported cheeses, seasonal fruits, house-made preserves, and rustic bread",
-        price: 24.00
+        name: "Aloo Tikki",
+        description: "Spiced potato patties mixed with herbs and spices, shallow fried until crispy golden",
+        price: 160.00,
+        image: "/images/starters/s4.jpg"
+      },
+      {
+        id: "s5",
+        name: "Mushroom Manchurian",
+        description: "Crispy fried mushrooms tossed in spicy, tangy Indo-Chinese sauce with spring onions",
+        price: 220.00,
+        isSpecial: true,
+        image: "/images/starters/s5.jpg"
       }
     ]
   },
@@ -49,42 +61,101 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         id: "m1",
-        name: "Stuffed Portobello Wellington",
-        description: "Roasted portobello mushrooms wrapped in puff pastry with spinach, sundried tomatoes, and herb cashew cream",
-        price: 32.00,
+        name: "Paneer Butter Masala",
+        description: "Fresh cottage cheese cubes in rich tomato-based gravy with butter, cream, and aromatic spices, served with naan",
+        price: 380.00,
         isChefChoice: true,
-        isSpecial: true
+        isSpecial: true,
+        image: "/images/menu/mains/paneer-butter-masala.jpg"
       },
       {
         id: "m2",
-        name: "Eggplant Parmigiana",
-        description: "Layers of grilled eggplant with fresh mozzarella, basil, and rich tomato sauce, served with garlic bread",
-        price: 28.00
+        name: "Palak Paneer",
+        description: "Fresh spinach puree cooked with cottage cheese, garlic, and mild spices, a healthy vegetarian delight",
+        price: 280.00,
+        image: "/images/menu/mains/palak-paneer.jpg"
       },
       {
         id: "m3",
-        name: "Butternut Squash Ravioli",
-        description: "House-made pasta filled with roasted butternut squash, served in brown butter sage sauce with toasted hazelnuts",
-        price: 26.00
+        name: "Veg Biryani",
+        description: "Fragrant basmati rice cooked with mixed vegetables, aromatic spices, and caramelized onions",
+        price: 320.00,
+        image: "/images/menu/mains/veg-biryani.jpg"
       },
       {
         id: "m4",
-        name: "Grilled Halloumi Steak",
-        description: "Thick-cut halloumi with Mediterranean vegetables, quinoa tabbouleh, and pomegranate molasses",
-        price: 30.00,
-        isSpecial: true
+        name: "Dal Makhani",
+        description: "Black lentils slow-cooked overnight with cream, butter, and spices, a rich and creamy comfort food",
+        price: 220.00,
+        image: "/images/menu/mains/dal-makhani.jpg"
       },
       {
         id: "m5",
-        name: "Wild Mushroom Risotto",
-        description: "Creamy arborio rice with porcini, shiitake, and chanterelle mushrooms, finished with aged parmesan and truffle oil",
-        price: 28.00
+        name: "Chana Masala",
+        description: "Chickpeas cooked in aromatic spices, tomatoes, and onions, a protein-rich Punjabi favorite",
+        price: 240.00,
+        image: "/images/menu/mains/chana-masala.jpg"
       },
       {
         id: "m6",
-        name: "Cauliflower Steak",
-        description: "Roasted whole cauliflower with tahini sauce, pomegranate seeds, fresh herbs, and roasted almonds",
-        price: 25.00
+        name: "Aloo Gobi",
+        description: "Potatoes and cauliflower cooked with turmeric, cumin, and fresh coriander, a classic home-style dish",
+        price: 180.00,
+        image: "/images/menu/mains/aloo-gobi.jpg"
+      },
+      {
+        id: "m7",
+        name: "Baingan Bharta",
+        description: "Smoky roasted eggplant mashed with onions, tomatoes, and spices, a rustic village-style dish",
+        price: 200.00,
+        image: "/images/menu/mains/baingan-bharta.jpg"
+      },
+      {
+        id: "m8",
+        name: "Mushroom Curry",
+        description: "Button mushrooms cooked in rich onion-tomato gravy with aromatic spices and fresh herbs",
+        price: 260.00,
+        image: "/images/menu/mains/mushroom-curry.jpg"
+      }
+    ]
+  },
+  {
+    title: "Breads & Rice",
+    items: [
+      {
+        id: "b1",
+        name: "Butter Naan",
+        description: "Soft leavened bread brushed with butter, baked in tandoor until golden and fluffy",
+        price: 40.00,
+        image: "/images/menu/breads/butter-naan.jpg"
+      },
+      {
+        id: "b2",
+        name: "Garlic Naan",
+        description: "Naan bread topped with garlic, coriander, and butter, aromatic and flavorful",
+        price: 50.00,
+        image: "/images/menu/breads/garlic-naan.jpg"
+      },
+      {
+        id: "b3",
+        name: "Steamed Basmati Rice",
+        description: "Long-grain aromatic rice, perfectly cooked and served with your choice of curry",
+        price: 80.00,
+        image: "/images/menu/breads/steamed-rice.jpg"
+      },
+      {
+        id: "b4",
+        name: "Jeera Rice",
+        description: "Basmati rice tempered with cumin seeds, whole spices, and fresh herbs",
+        price: 100.00,
+        image: "/images/menu/breads/jeera-rice.jpg"
+      },
+      {
+        id: "b5",
+        name: "Pulao",
+        description: "Fragrant rice cooked with vegetables, whole spices, and aromatic herbs",
+        price: 120.00,
+        image: "/images/menu/breads/veg-pulao.jpg"
       }
     ]
   },
@@ -93,29 +164,40 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         id: "d1",
-        name: "Dark Chocolate Soufflé",
-        description: "Warm vegan dark chocolate soufflé with vanilla bean coconut ice cream and gold leaf",
-        price: 14.00,
-        isChefChoice: true
+        name: "Gulab Jamun",
+        description: "Soft milk solids dumplings soaked in rose-flavored sugar syrup, served warm",
+        price: 120.00,
+        isChefChoice: true,
+        image: "/images/menu/desserts/gulab-jamun.jpg"
       },
       {
         id: "d2",
-        name: "Classic Tiramisu",
-        description: "Traditional Italian tiramisu with espresso-soaked ladyfingers and mascarpone (vegetarian)",
-        price: 12.00
+        name: "Rasmalai",
+        description: "Soft cottage cheese patties soaked in sweetened, thickened milk, garnished with pistachios",
+        price: 140.00,
+        image: "/images/menu/desserts/rasmalai.jpg"
       },
       {
         id: "d3",
-        name: "Meyer Lemon Tart",
-        description: "Vegan Meyer lemon curd tart with aquafaba meringue and fresh seasonal berries",
-        price: 11.00
+        name: "Kheer",
+        description: "Traditional rice pudding cooked with milk, sugar, and cardamom, topped with nuts",
+        price: 100.00,
+        image: "/images/menu/desserts/kheer.jpg"
       },
       {
         id: "d4",
-        name: "Seasonal Fruit Crème Brûlée",
-        description: "Vanilla, lavender, and passion fruit crème brûlée trio with organic seasonal fruit",
-        price: 15.00,
-        isSpecial: true
+        name: "Jalebi",
+        description: "Crispy spiral-shaped sweet made from flour batter, deep-fried and soaked in sugar syrup",
+        price: 80.00,
+        isSpecial: true,
+        image: "/images/menu/desserts/jalebi.jpg"
+      },
+      {
+        id: "d5",
+        name: "Gajar Ka Halwa",
+        description: "Carrot pudding cooked with milk, ghee, and nuts, a winter favorite",
+        price: 160.00,
+        image: "/images/menu/desserts/gajar-halwa.jpg"
       }
     ]
   },
@@ -123,29 +205,40 @@ export const menuData: MenuCategory[] = [
     title: "Beverages",
     items: [
       {
-        id: "b1",
-        name: "Garden Botanical Cocktail",
-        description: "House-infused gin with fresh herbs, elderflower, cucumber, and botanical bitters",
-        price: 16.00,
-        isSpecial: true
+        id: "dr1",
+        name: "Masala Chai",
+        description: "Traditional Indian tea brewed with milk, ginger, cardamom, and aromatic spices",
+        price: 60.00,
+        image: "/images/menu/beverages/masala-chai.jpg"
       },
       {
-        id: "b2",
-        name: "Organic Wine Selection",
-        description: "Curated organic and biodynamic wine pairings available by the glass or bottle - ask your server",
-        price: 12.00
+        id: "dr2",
+        name: "Sweet Lassi",
+        description: "Refreshing yogurt-based drink sweetened with sugar and flavored with cardamom",
+        price: 80.00,
+        image: "/images/menu/beverages/sweet-lassi.jpg"
       },
       {
-        id: "b3",
-        name: "Fair Trade Coffee",
-        description: "Single-origin espresso drinks made with locally roasted, ethically sourced beans",
-        price: 5.00
+        id: "dr3",
+        name: "Thandai",
+        description: "Cooling drink made with milk, nuts, saffron, and aromatic spices, perfect for hot days",
+        price: 120.00,
+        isSpecial: true,
+        image: "/images/menu/beverages/thandai.jpg"
       },
       {
-        id: "b4",
-        name: "Fresh Herb Sodas",
-        description: "House-made sodas with fresh herbs, fruits, and organic botanicals crafted daily",
-        price: 6.00
+        id: "dr4",
+        name: "Filter Coffee",
+        description: "South Indian style coffee brewed with chicory, served with frothy milk",
+        price: 70.00,
+        image: "/images/menu/beverages/filter-coffee.jpg"
+      },
+      {
+        id: "dr5",
+        name: "Mango Lassi",
+        description: "Sweet and creamy mango yogurt drink, perfect summer refreshment",
+        price: 100.00,
+        image: "/images/menu/beverages/mango-lassi.jpg"
       }
     ]
   }

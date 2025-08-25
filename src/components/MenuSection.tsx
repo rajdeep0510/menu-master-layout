@@ -1,6 +1,7 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import MenuItemCard from "@/components/MenuItemCard";
 import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface MenuItem {
   id: string;
@@ -9,6 +10,7 @@ interface MenuItem {
   price: number;
   isSpecial?: boolean;
   isChefChoice?: boolean;
+  image?: string;
 }
 
 interface MenuSectionProps {
@@ -18,6 +20,7 @@ interface MenuSectionProps {
 
 const MenuSection = ({ title, items }: MenuSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
@@ -35,61 +38,66 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
       
       <div className="grid gap-6 md:gap-8">
         {items.map((item, index) => (
-          <Card 
-            key={item.id} 
-            className={`group hover:shadow-xl hover:scale-[1.02] transition-all duration-500 border-border/50 cursor-pointer overflow-hidden ${
-              item.isSpecial ? 'ring-2 ring-accent/30 shadow-special animate-glow' : ''
-            } ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
-            style={{
-              background: item.isSpecial 
-                ? 'linear-gradient(145deg, hsl(var(--card)), hsl(var(--accent-light) / 0.1))'
-                : 'var(--gradient-card)',
-              animationDelay: `${index * 0.1}s`
-            }}
-          >
-            <CardContent className="p-6 md:p-8 relative">
-              {/* Hover overlay effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex-1 space-y-3">
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <h3 className="font-playfair text-xl md:text-2xl font-medium text-primary group-hover:text-primary-light transition-colors duration-300">
-                      {item.name}
-                    </h3>
-                    {item.isChefChoice && (
-                      <Badge 
-                        variant="secondary" 
-                        className="bg-gradient-to-r from-accent to-accent-light text-accent-foreground font-medium animate-bounce-subtle hover:scale-110 transition-transform duration-200"
-                      >
-                        Chef's Choice
-                      </Badge>
-                    )}
-                    {item.isSpecial && (
-                      <Badge 
-                        variant="outline" 
-                        className="border-accent text-accent font-medium hover:bg-accent hover:text-accent-foreground transition-all duration-200"
-                      >
-                        Special
-                      </Badge>
-                    )}
-                  </div>
-                  
-                  <p className="text-muted-foreground font-inter leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
-                    {item.description}
-                  </p>
-                </div>
-                
-                <div className="md:ml-6 flex-shrink-0">
-                  <span className="font-playfair text-2xl md:text-3xl font-semibold text-primary group-hover:text-accent transition-all duration-300 group-hover:scale-110 inline-block">
-                    ${item.price.toFixed(2)}
-                  </span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <MenuItemCard
+            key={item.id}
+            item={item}
+            index={index}
+            isVisible={isVisible}
+            onClick={() => setSelectedItem(item)}
+          />
         ))}
       </div>
+
+      <Dialog open={!!selectedItem} onOpenChange={(open) => !open && setSelectedItem(null)}>
+        <DialogContent className="max-w-md">
+          {selectedItem && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-playfair text-2xl text-primary text-center">
+                  {selectedItem.name}
+                </DialogTitle>
+              </DialogHeader>
+              
+              <div className="mt-4">
+                <div className="rounded-lg overflow-hidden mb-4">
+                  <AspectRatio ratio={1}>
+                    <img
+                      src={selectedItem.image || "/placeholder.svg"}
+                      alt={selectedItem.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </AspectRatio>
+                </div>
+                
+                <div className="space-y-3">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {selectedItem.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-2">
+                      {selectedItem.isChefChoice && (
+                        <span className="bg-gradient-to-r from-accent to-accent-light text-accent-foreground text-xs px-2 py-1 rounded">
+                          Chef's Choice
+                        </span>
+                      )}
+                      {selectedItem.isSpecial && (
+                        <span className="border border-accent text-accent text-xs px-2 py-1 rounded">
+                          Special
+                        </span>
+                      )}
+                    </div>
+                    
+                    <span className="font-playfair text-2xl font-semibold text-primary">
+                      ₹{selectedItem.price.toFixed(2)}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
